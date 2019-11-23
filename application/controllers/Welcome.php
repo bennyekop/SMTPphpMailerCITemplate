@@ -20,32 +20,32 @@ class Welcome extends CI_Controller {
                         // PHPMailer object
                      $response = false;
                      $mail = new PHPMailer();
-                    //$mail = $this->PHPMailer_Lib->load();
+                   
             
                     // SMTP configuration
                     $mail->isSMTP();
-                    $mail->Host     = 'smtp.gmail.com';
+                    $mail->Host     = 'hostdomain.com'; //sesuaikan sesuai nama domain hosting/server yang digunakan
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'crm.support@jababeka.com';
-                    $mail->Password = 'crmji2019';
+                    $mail->Username = 'xxx@hostdomain.com'; // user email
+                    $mail->Password = 'xxxxxxxxxx'; // password email
                     $mail->SMTPSecure = 'ssl';
                     $mail->Port     = 465;
             
-                    $mail->setFrom('crm.support@jababeka.com', '');
-                    $mail->addReplyTo('crm.support@jababeka.com', '');
+                    $mail->setFrom('xxx@hostdomain.com', ''); // user email
+                    $mail->addReplyTo('xxx@hostdomain.com', ''); //user email
             
                     // Add a recipient
-                    $mail->addAddress('benny@rumahweb.co.id');
+                    $mail->addAddress('to@hostdomain.com'); //email tujuan pengiriman email
             
                     // Email subject
-                    $mail->Subject = 'SMTP Codeigniter';
+                    $mail->Subject = 'SMTP Codeigniter'; //subject email
             
                     // Set email format to HTML
                     $mail->isHTML(true);
             
                     // Email body content
                     $mailContent = "<h1>SMTP Codeigniterr</h1>
-                        <p>Laporan email SMTP Codeigniter.</p>";
+                        <p>Laporan email SMTP Codeigniter.</p>"; // isi email
                     $mail->Body = $mailContent;
             
                     // Send email
